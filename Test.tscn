@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjkqo4hoykxbv"]
+[gd_scene load_steps=5 format=3 uid="uid://bjkqo4hoykxbv"]
 
+[ext_resource type="Script" path="res://test.gd" id="1_cfj5b"]
 [ext_resource type="PackedScene" uid="uid://c5w6wo8fis64e" path="res://Player.tscn" id="1_j7vu3"]
+[ext_resource type="PackedScene" uid="uid://2o56wvxnfe6h" path="res://player_health_component.tscn" id="2_d6ft4"]
+[ext_resource type="PackedScene" uid="uid://cub0a4voevq2f" path="res://healthbar.tscn" id="3_fm4qj"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_cfj5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_j7vu3")]
 position = Vector2(510, 294)
+
+[node name="PlayerHealthComponent" parent="Player" instance=ExtResource("2_d6ft4")]
+
+[node name="Healthbar" parent="." instance=ExtResource("3_fm4qj")]
