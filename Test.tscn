@@ -1,28 +1,24 @@
-<<<<<<< HEAD
-[gd_scene load_steps=2 format=3 uid="uid://cy4xdyxd0thjd"]
+[gd_scene load_steps=7 format=3 uid="uid://dva75dwudlhxa"]
 
-[ext_resource type="PackedScene" uid="uid://d3o4riscl672x" path="res://Player.tscn" id="1_j7vu3"]
-=======
-[gd_scene load_steps=6 format=3 uid="uid://bjkqo4hoykxbv"]
+[ext_resource type="Script" path="res://test.gd" id="1_t6r1e"]
+[ext_resource type="PackedScene" uid="uid://d3o4riscl672x" path="res://Player.tscn" id="2_krrqr"]
+[ext_resource type="PackedScene" path="res://player_health_component.tscn" id="3_eed7b"]
+[ext_resource type="PackedScene" uid="uid://crtvx7tw2rk35" path="res://persia.tscn" id="4_x5c6i"]
+[ext_resource type="PackedScene" path="res://healthbar.tscn" id="5_q70fk"]
+[ext_resource type="PackedScene" uid="uid://cc7irwc57gvk7" path="res://basic_monster.tscn" id="6_mwgnl"]
 
-[ext_resource type="Script" path="res://test.gd" id="1_cfj5b"]
-[ext_resource type="PackedScene" uid="uid://c5w6wo8fis64e" path="res://Player.tscn" id="1_j7vu3"]
-[ext_resource type="PackedScene" uid="uid://2o56wvxnfe6h" path="res://player_health_component.tscn" id="2_d6ft4"]
-[ext_resource type="PackedScene" uid="uid://cub0a4voevq2f" path="res://healthbar.tscn" id="3_fm4qj"]
-[ext_resource type="PackedScene" uid="uid://cd2vnre210b0b" path="res://persia.tscn" id="5_mtmd2"]
->>>>>>> fe37c38b2df6b1624248012dda587e2894e603d0
+[node name="Test" type="Node2D"]
+script = ExtResource("1_t6r1e")
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_cfj5b")
+[node name="Persia" parent="." instance=ExtResource("4_x5c6i")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("1_j7vu3")]
+[node name="Player" parent="." instance=ExtResource("2_krrqr")]
 top_level = true
-position = Vector2(510, 294)
+position = Vector2(-1, 0)
 
-[node name="PlayerHealthComponent" parent="Player" instance=ExtResource("2_d6ft4")]
+[node name="PlayerHealthComponent" parent="Player" instance=ExtResource("3_eed7b")]
 
-[node name="Healthbar" parent="." instance=ExtResource("3_fm4qj")]
+[node name="Healthbar" parent="." instance=ExtResource("5_q70fk")]
 
-[node name="Persia" parent="." instance=ExtResource("5_mtmd2")]
+[node name="basic_monster" parent="." instance=ExtResource("6_mwgnl")]
+position = Vector2(880, 271)
