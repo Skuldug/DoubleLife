@@ -17,7 +17,8 @@ position = Vector2(2.5, -1.5)
 shape = SubResource("RectangleShape2D_ycmkx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4, -1)
+position = Vector2(3, -0.500004)
+scale = Vector2(0.953125, 0.945312)
 texture = ExtResource("2_3ukp6")
 
 [node name="playerhitbox" type="Area2D" parent="."]

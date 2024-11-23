@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://de153j15njy73"]
+
+[ext_resource type="PackedScene" uid="uid://cbpnr8swupt8v" path="res://basic_monster.tscn" id="1_ge3kk"]
+[ext_resource type="PackedScene" uid="uid://c5w6wo8fis64e" path="res://Player.tscn" id="2_55ooj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="basic_monster" parent="." instance=ExtResource("1_ge3kk")]
+position = Vector2(564, 117)
+collision_layer = 2
+
+[node name="Player" parent="." instance=ExtResource("2_55ooj")]
+position = Vector2(802, 151)
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
