@@ -1,5 +1,21 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://cy4xdyxd0thjd"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://bjkqo4hoykxbv"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://c5w6wo8fis64e" path="res://Player.tscn" id="1_j7vu3"]
+[ext_resource type="PackedScene" uid="uid://dmy163dw31sw4" path="res://basic_monster.tscn" id="2_xt568"]
+>>>>>>> Stashed changes
+
+[node name="Main" type="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+<<<<<<< Updated upstream
+=======
+
+[node name="Player" parent="." instance=ExtResource("1_j7vu3")]
+position = Vector2(510, 294)
+
+[node name="basic_monster" parent="." instance=ExtResource("2_xt568")]
+position = Vector2(833, 335)
+>>>>>>> Stashed changes
