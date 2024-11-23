@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0nv4lyt7qivo"]
+
+[ext_resource type="Texture2D" uid="uid://bca2k137q4sqc" path="res://giant.png" id="1_byolc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkbb3"]
+size = Vector2(140, 20)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(418.25, 407.25)
+scale = Vector2(0.557778, 0.117778)
+texture = ExtResource("1_byolc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(425, 404)
+shape = SubResource("RectangleShape2D_hkbb3")

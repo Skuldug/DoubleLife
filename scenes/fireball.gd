@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 300.0  # Speed of the fireball
+@export var speed: float = 500.0  # Speed of the fireball
 var direction: Vector2 = Vector2.RIGHT  # Default direction
 @export var lifetime: float = 3.0  # Fireball disappears after this time
 
