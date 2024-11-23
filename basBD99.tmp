@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmy163dw31sw4"]
+
+[ext_resource type="Texture2D" uid="uid://blnqtucpkerbu" path="res://icon.svg" id="1_u3d3v"]
+
+[sub_resource type="GDScript" id="GDScript_3mgml"]
+script/source = "extends CharacterBody2D
+
+var run_speed = 25
+var chase = false
+var health = 10
+var target = null
+var damage = 20
+
+func _physics_process(delta) -> void:
+	velocity = Vector2.ZERO
+	if target:
+		velocity = position.direction_to(target.position) * run_speed
+	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	target = body
+	if target.is_in_group(\"Player\"):
+		body = target
+
+
+func _on_swing_body_entered(body: Node2D) -> void:
+	target = body
+	target.health -= 10
+	func _on_timer_timeout() -> void:
+		target.health -= 10
+		print (target.health)
+
+func _on_swing_body_exited(body: Node2D) -> void:
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nit3d"]
+radius = 69.1231
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l46ue"]
+radius = 152.161
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f048v"]
+radius = 89.2861
+
+[node name="basic_monster" type="CharacterBody2D"]
+script = SubResource("GDScript_3mgml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_nit3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 3)
+texture = ExtResource("1_u3d3v")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_l46ue")
+
+[node name="Swing" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swing"]
+position = Vector2(3, -1)
+shape = SubResource("CircleShape2D_f048v")
+
+[node name="Timer" type="Timer" parent="Swing"]
+
+[connection signal="area_entered" from="Detection" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="child_exiting_tree" from="Detection/CollisionShape2D" to="." method="_on_collision_shape_2d_child_exiting_tree"]
+[connection signal="body_entered" from="Swing" to="." method="_on_swing_body_entered"]
+[connection signal="body_exited" from="Swing" to="." method="_on_swing_body_exited"]
+[connection signal="timeout" from="Swing/Timer" to="." method="_on_timer_timeout"]

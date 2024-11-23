@@ -21,7 +21,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_swing_body_entered(body: Node2D) -> void:
 	target = body
 	target.health -= 10
-	func _on_timer_timeout() -> void:
+	func _on_timer_timeout():
 		target.health -= 10
 		print (target.health)
 
