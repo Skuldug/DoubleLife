@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://yudxkka30wiv"
-=======
-uid="uid://ps6344a8jp7q"
->>>>>>> fe37c38b2df6b1624248012dda587e2894e603d0
-path="res://.godot/imported/GiantFinal.png-e3d49db2c3b2382036594b378abb6925.ctex"
+uid="uid://5twdocxhvfyk"
+path="res://.godot/imported/testnum1.png-63401f61fb82c63f96048f4fae357ea4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GiantFinal.png"
-dest_files=["res://.godot/imported/GiantFinal.png-e3d49db2c3b2382036594b378abb6925.ctex"]
+source_file="res://test_sprites/testnum1.png"
+dest_files=["res://.godot/imported/testnum1.png-63401f61fb82c63f96048f4fae357ea4.ctex"]
 
 [params]
 
