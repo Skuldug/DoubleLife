@@ -98,7 +98,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_a3tur")
 
-[node name="Node2D" type="Node2D"]
+[node name="Rome" type="Node2D"]
 
 [node name="Roads" type="TileMapLayer" parent="."]
 texture_filter = 1
