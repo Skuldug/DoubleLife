@@ -13,3 +13,5 @@ collision_mask = 6
 
 [node name="Healthbar" parent="." instance=ExtResource("5_q70fk")]
 follow_viewport_enabled = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

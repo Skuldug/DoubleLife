@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 const level_resource_array = ["res://Rome.tscn",
 							  "res://Persia.tscn",
 							  "res://WildWest.tscn",
@@ -10,7 +12,7 @@ var level_node : Node2D
 var enter_counter : int = 0
 var corpse : StaticBody2D
 var endpoint : StaticBody2D
-var level_counter : int = 2
+var level_counter : int = 0
 
 func _ready() -> void:
 	# Load and instantiate healthbar
@@ -100,9 +102,17 @@ func _player_reached_end():
 	player.player_reset()
 	level_counter += 1
 	load_level(false, false)
-	endpoint.player_reached_end.connect(self._player_reached_end)
-
+	if level_counter != 4:
+		endpoint.player_reached_end.connect(self._player_reached_end)
+	
 func load_level(first_load : bool, death : bool,):
+	if level_counter == 4:
+		var end = load("res://Endscene.tscn").instantiate()
+		end.z_index = -10000
+		self.add_child(end, true)
+		var cam = end.get_node("Camera2D")
+		cam.make_current()
+		return
 	if !first_load and level_counter or death:
 		var current_level = find_direct_child_by_resource(level_resource_array[level_counter if death else level_counter - 1])
 		current_level.queue_free()

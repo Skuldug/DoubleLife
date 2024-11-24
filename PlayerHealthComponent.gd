@@ -3,8 +3,7 @@ extends Node
 signal play_animation(animation : StringName)
 signal on_player_death()
 
-const MAX_HEALTH : int = 4000
-
+const MAX_HEALTH : int = 600
 const med_threshold : int = MAX_HEALTH / 3 * 2
 const low_threshold : int = MAX_HEALTH / 3
 var health_in_frames : int = MAX_HEALTH
