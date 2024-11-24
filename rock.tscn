@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dceu6sdbuu03b"]
+
+[ext_resource type="PackedScene" uid="uid://ymu1kjhjttyu" path="res://enemy_projectile.tscn" id="1_hc4ud"]
+[ext_resource type="Texture2D" uid="uid://bvwbpptiuyec5" path="res://Giant.png" id="2_c7red"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbdih"]
+atlas = ExtResource("2_c7red")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s067x"]
+atlas = ExtResource("2_c7red")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hobtk"]
+atlas = ExtResource("2_c7red")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm00c"]
+atlas = ExtResource("2_c7red")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehixv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbdih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s067x")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hobtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm00c")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="Node2D" instance=ExtResource("1_hc4ud")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_ehixv")

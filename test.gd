@@ -1,14 +1,16 @@
 extends Node2D
 
 const level_resource_array = ["res://Rome.tscn",
-							  "res://Persia.tscn",]
+							  "res://Persia.tscn",
+							  "res://WildWest.tscn",
+							  "res://Future.tscn"]
 var player : CharacterBody2D
 var healthbar : CanvasLayer
 var level_node : Node2D
 var enter_counter : int = 0
 var corpse : StaticBody2D
 var endpoint : StaticBody2D
-var level_counter : int = 0
+var level_counter : int = 2
 
 func _ready() -> void:
 	# Load and instantiate healthbar

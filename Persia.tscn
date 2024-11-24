@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://68poajhnic6g"]
+[gd_scene load_steps=12 format=4 uid="uid://68poajhnic6g"]
 
 [ext_resource type="Texture2D" uid="uid://cjc70164jbbdu" path="res://PersianRoadTiles.png" id="1_d1vou"]
 [ext_resource type="PackedScene" uid="uid://4uacms8p6s0x" path="res://endpoint.tscn" id="1_hplkg"]
 [ext_resource type="Texture2D" uid="uid://cpwtpb6naqbtq" path="res://PersianHouseNew.png" id="2_3seem"]
 [ext_resource type="Texture2D" uid="uid://bs52l74d4x75o" path="res://PersiaMosqueWBackground.png" id="3_p0iqy"]
 [ext_resource type="PackedScene" uid="uid://cer462kioeoq2" path="res://spawnpoint.tscn" id="4_qtdtt"]
+[ext_resource type="PackedScene" uid="uid://c4fuppf7vlln2" path="res://Snake.tscn" id="6_wwiie"]
+[ext_resource type="PackedScene" uid="uid://ch1al3dq1fcpl" path="res://static_giant.tscn" id="7_h8yew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rm03l"]
 texture = ExtResource("1_d1vou")
@@ -147,4 +149,31 @@ scale = Vector2(-16.4011, 118.848)
 
 [node name="endpoint" parent="." instance=ExtResource("1_hplkg")]
 unique_name_in_owner = true
-position = Vector2(137, -86)
+position = Vector2(137, -133)
+
+[node name="basic_monster" parent="." instance=ExtResource("6_wwiie")]
+position = Vector2(721, 845)
+
+[node name="basic_monster2" parent="." instance=ExtResource("6_wwiie")]
+position = Vector2(360, 1048)
+
+[node name="basic_monster3" parent="." instance=ExtResource("6_wwiie")]
+position = Vector2(1341, 748)
+
+[node name="basic_monster4" parent="." instance=ExtResource("6_wwiie")]
+position = Vector2(358, 562)
+
+[node name="basic_monster5" parent="." instance=ExtResource("6_wwiie")]
+position = Vector2(1030, 257)
+
+[node name="StaticEnemy" parent="." instance=ExtResource("7_h8yew")]
+position = Vector2(85, 878)
+
+[node name="StaticEnemy2" parent="." instance=ExtResource("7_h8yew")]
+position = Vector2(1297, 996)
+
+[node name="StaticEnemy3" parent="." instance=ExtResource("7_h8yew")]
+position = Vector2(604, 137)
+
+[node name="StaticEnemy4" parent="." instance=ExtResource("7_h8yew")]
+position = Vector2(1501, 67)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://boypcw5y7yf75"]
+[gd_scene load_steps=14 format=3 uid="uid://boypcw5y7yf75"]
 
 [ext_resource type="PackedScene" uid="uid://q34swh7do0sn" path="res://static_enemy.tscn" id="1_tipob"]
 [ext_resource type="Texture2D" uid="uid://7mxy5qwukgmi" path="res://Legionary.png" id="2_3qax2"]
+[ext_resource type="PackedScene" uid="uid://crn1tertge2mh" path="res://spear.tscn" id="2_51ujb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73apt"]
 atlas = ExtResource("2_3qax2")
@@ -64,7 +65,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_left",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -81,25 +82,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_right",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="StaticEnemy" instance=ExtResource("1_tipob")]
-detection_distance = 200.0
-fire_interval = 1.5
+projectile = ExtResource("2_51ujb")
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(540, 348)
+position = Vector2(1.49988, 17.8573)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
-position = Vector2(537, 343)
+position = Vector2(-1.50012, 12.8573)
 scale = Vector2(1.54687, 1.27679)
 sprite_frames = SubResource("SpriteFrames_jjw50")
-animation = &"shoot_right"
+animation = &"shoot_left"
 
 [node name="left_cast" parent="." index="2"]
-position = Vector2(568, 330)
+position = Vector2(29.4999, -0.142731)
 
 [node name="right_cast" parent="." index="3"]
-position = Vector2(511, 331)
+position = Vector2(-27.5001, 0.857269)

@@ -37,12 +37,14 @@ func check_for_target():
 		if target and target.is_in_group("Player"):
 			is_facing_left = true
 			sprite.play("shoot_left")
+			sprite.flip_h=true
 			attempt_shoot()
 	elif right_cast.is_colliding():
 		var target = right_cast.get_collider()
 		if target and target.is_in_group("Player"):
 			is_facing_left = false
 			sprite.play("shoot_right")
+			sprite.flip_h=false
 			attempt_shoot()
 	else:
 		# No target detected, play idle animation

@@ -4,6 +4,7 @@ extends BasicMonster
 
 func _process(delta: float) -> void:
 	# If there is movement (non-zero velocity), update the animation
+	
 	if velocity.x < 0:  # Moving left
 		if anim_sprite.animation != "glad_walk_left":
 			anim_sprite.play("glad_walk_left")

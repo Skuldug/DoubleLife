@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://ch1al3dq1fcpl"]
+
+[ext_resource type="PackedScene" uid="uid://q34swh7do0sn" path="res://static_enemy.tscn" id="1_ejgay"]
+[ext_resource type="Script" path="res://static_giant.gd" id="2_o08xd"]
+[ext_resource type="PackedScene" uid="uid://dceu6sdbuu03b" path="res://rock.tscn" id="3_huqag"]
+[ext_resource type="Texture2D" uid="uid://bvwbpptiuyec5" path="res://Giant.png" id="4_dhnws"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oucvs"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me283"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7w0p"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mscg"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8lph"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbbh8"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asg2t"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksamw"]
+atlas = ExtResource("4_dhnws")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhb2e"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oucvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me283")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7w0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mscg")
+}],
+"loop": true,
+"name": &"shoot_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8lph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbbh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asg2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksamw")
+}],
+"loop": true,
+"name": &"shoot_right",
+"speed": 5.0
+}]
+
+[node name="StaticEnemy" instance=ExtResource("1_ejgay")]
+script = ExtResource("2_o08xd")
+projectile = ExtResource("3_huqag")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(7.25, 18.3584)
+scale = Vector2(1.77344, 1.58412)
+sprite_frames = SubResource("SpriteFrames_uhb2e")
+animation = &"shoot_right"

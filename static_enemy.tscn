@@ -15,21 +15,20 @@ script = ExtResource("1_y7bsn")
 projectile = SubResource("PackedScene_m6bpa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(537.75, 316.5)
+position = Vector2(3.75, 16.5)
 shape = SubResource("RectangleShape2D_ig1bd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(534, 300)
 scale = Vector2(3.9375, 3.25)
 sprite_frames = SubResource("SpriteFrames_vnja1")
 animation = &""
 
 [node name="left_cast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(586, 302)
+position = Vector2(52, 2)
 target_position = Vector2(50, 0)
 
 [node name="right_cast" type="RayCast2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(487, 304)
+position = Vector2(-47, 4)
 target_position = Vector2(-50, 0)

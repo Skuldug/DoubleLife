@@ -56,3 +56,4 @@ shape = SubResource("RectangleShape2D_euqgh")
 [node name="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ljl25")
+animation = &"left"
