@@ -46,9 +46,9 @@ offset_right = 835.0
 offset_bottom = 235.0
 
 [node name="Label" type="Label" parent="Container"]
-visible = false
 layout_mode = 2
 text = "You successfully became immortal
-Have fun all alone!"
+Have fun all alone, as the only
+WITNESS OF TIME!"
 label_settings = SubResource("LabelSettings_urr76")
 horizontal_alignment = 1
