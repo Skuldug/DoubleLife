@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://q34swh7do0sn"]
+
+[ext_resource type="Script" path="res://static_enemy.gd" id="1_y7bsn"]
+
+[sub_resource type="PackedScene" id="PackedScene_m6bpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig1bd"]
+size = Vector2(43, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnja1"]
+animations = []
+
+[node name="StaticEnemy" type="Node2D"]
+script = ExtResource("1_y7bsn")
+projectile = SubResource("PackedScene_m6bpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(537.75, 316.5)
+shape = SubResource("RectangleShape2D_ig1bd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(534, 300)
+scale = Vector2(3.9375, 3.25)
+sprite_frames = SubResource("SpriteFrames_vnja1")
+animation = &""
+
+[node name="left_cast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(586, 302)
+target_position = Vector2(50, 0)
+
+[node name="right_cast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(487, 304)
+target_position = Vector2(-50, 0)

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://crn1tertge2mh"]
+
+[ext_resource type="PackedScene" uid="uid://ymu1kjhjttyu" path="res://enemy_projectile.tscn" id="1_tikdg"]
+[ext_resource type="Texture2D" uid="uid://7mxy5qwukgmi" path="res://Legionary.png" id="2_oa1p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euqgh"]
+size = Vector2(52, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf4r0"]
+atlas = ExtResource("2_oa1p8")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h6tt"]
+atlas = ExtResource("2_oa1p8")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfoum"]
+atlas = ExtResource("2_oa1p8")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b2cu"]
+atlas = ExtResource("2_oa1p8")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljl25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf4r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h6tt")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfoum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b2cu")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="Node2D" instance=ExtResource("1_tikdg")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_euqgh")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ljl25")

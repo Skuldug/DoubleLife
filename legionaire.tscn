@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://boypcw5y7yf75"]
+
+[ext_resource type="PackedScene" uid="uid://q34swh7do0sn" path="res://static_enemy.tscn" id="1_tipob"]
+[ext_resource type="Texture2D" uid="uid://7mxy5qwukgmi" path="res://Legionary.png" id="2_3qax2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73apt"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcfph"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxid2"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjsre"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7cls"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltffk"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w103j"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy8ll"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcpqi"]
+atlas = ExtResource("2_3qax2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jjw50"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73apt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcfph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxid2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjsre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7cls")
+}],
+"loop": true,
+"name": &"shoot_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltffk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w103j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy8ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcpqi")
+}],
+"loop": true,
+"name": &"shoot_right",
+"speed": 5.0
+}]
+
+[node name="StaticEnemy" instance=ExtResource("1_tipob")]
+detection_distance = 200.0
+fire_interval = 1.5
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(540, 348)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(537, 343)
+scale = Vector2(1.54687, 1.27679)
+sprite_frames = SubResource("SpriteFrames_jjw50")
+animation = &"shoot_right"
+
+[node name="left_cast" parent="." index="2"]
+position = Vector2(568, 330)
+
+[node name="right_cast" parent="." index="3"]
+position = Vector2(511, 331)

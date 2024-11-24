@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-class_name basic_monster
+class_name BasicMonster
 
 signal on_player_hit(damage : int)
 var run_speed = 25
 var health = 10
 var target = null
-@export var damage = 500
+@export var damage = 30
 @onready var melee_component : Area2D = %MeleeComponent
 @onready var detect_component : Area2D = %detect_component
 
@@ -24,3 +24,5 @@ func player_hit(damage : int) -> void:
 
 func found_player(player : Node):
 	target = player
+func  lost_player():
+	target = null
