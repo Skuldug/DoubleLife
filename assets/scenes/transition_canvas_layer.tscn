@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dunsv1pkuquse"]
+
+[ext_resource type="Shader" path="res://src/blackout.gdshader" id="1_gv5nw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjkpg"]
+shader = ExtResource("1_gv5nw")
+shader_parameter/fade_factor = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+material = SubResource("ShaderMaterial_mjkpg")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

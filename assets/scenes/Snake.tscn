@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4fuppf7vlln2"]
+
+[ext_resource type="PackedScene" uid="uid://cc7irwc57gvk7" path="res://assets/scenes/basic_monster.tscn" id="1_ybvdn"]
+[ext_resource type="Script" path="res://src/Snake.gd" id="2_rajvd"]
+[ext_resource type="Texture2D" uid="uid://ocf30s8g5d0b" path="res://assets/images/Snake.png" id="3_my0sj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pav80"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djnao"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7kci"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkaou"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55px2"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1m52"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovgj"]
+atlas = ExtResource("3_my0sj")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_miaqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pav80")
+}],
+"loop": true,
+"name": &"snake_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djnao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7kci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkaou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55px2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1m52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovgj")
+}],
+"loop": true,
+"name": &"snake_right",
+"speed": 5.0
+}]
+
+[node name="basic_monster" instance=ExtResource("1_ybvdn")]
+script = ExtResource("2_rajvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="3"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_miaqu")
+animation = &"snake_idle"
+
+[editable path="MeleeComponent"]
+[editable path="detect_component"]

@@ -1,0 +1,170 @@
+[gd_scene load_steps=18 format=3 uid="uid://doalbhyok3yr1"]
+
+[ext_resource type="Texture2D" uid="uid://li2v3gm657ly" path="res://assets/images/TitleScreenSprite.png" id="1_o68no"]
+[ext_resource type="Script" path="res://src/titlescreen.gd" id="1_ta5ke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6msy"]
+atlas = ExtResource("1_o68no")
+region = Rect2(0, 0, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjobi"]
+atlas = ExtResource("1_o68no")
+region = Rect2(512, 0, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3grhq"]
+atlas = ExtResource("1_o68no")
+region = Rect2(1024, 0, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eylki"]
+atlas = ExtResource("1_o68no")
+region = Rect2(0, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0tsy"]
+atlas = ExtResource("1_o68no")
+region = Rect2(512, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yy4h"]
+atlas = ExtResource("1_o68no")
+region = Rect2(1024, 256, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cr40"]
+atlas = ExtResource("1_o68no")
+region = Rect2(0, 512, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6luc"]
+atlas = ExtResource("1_o68no")
+region = Rect2(512, 512, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68b8s"]
+atlas = ExtResource("1_o68no")
+region = Rect2(1024, 512, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s1q8"]
+atlas = ExtResource("1_o68no")
+region = Rect2(0, 768, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1i0g"]
+atlas = ExtResource("1_o68no")
+region = Rect2(512, 768, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lruwe"]
+atlas = ExtResource("1_o68no")
+region = Rect2(1024, 768, 512, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssv7i"]
+atlas = ExtResource("1_o68no")
+region = Rect2(0, 1024, 512, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjcx3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6msy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjobi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3grhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eylki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0tsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yy4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cr40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6luc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68b8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s1q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1i0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lruwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssv7i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5n6oa"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0.239216, 0.2, 0.2, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.211765)
+shadow_offset = Vector2(2, 4)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 3
+follow_viewport_enabled = true
+script = ExtResource("1_ta5ke")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(264, 122)
+sprite_frames = SubResource("SpriteFrames_xjcx3")
+frame_progress = 0.324821
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="AnimatedSprite2D"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -128.0
+offset_right = -256.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AnimatedSprite2D/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimatedSprite2D/Control/HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="AnimatedSprite2D/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+text = "Play
+"
+label_settings = SubResource("LabelSettings_5n6oa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+texture_filter = 1
+zoom = Vector2(2.55, 2.55)
+metadata/_edit_lock_ = true
+
+[connection signal="focus_entered" from="AnimatedSprite2D/Control/HBoxContainer/VBoxContainer/Label" to="." method="_on_label_focus_entered"]
+[connection signal="gui_input" from="AnimatedSprite2D/Control/HBoxContainer/VBoxContainer/Label" to="." method="_on_label_gui_input"]
+[connection signal="mouse_entered" from="AnimatedSprite2D/Control/HBoxContainer/VBoxContainer/Label" to="." method="_on_label_mouse_entered"]
+[connection signal="mouse_exited" from="AnimatedSprite2D/Control/HBoxContainer/VBoxContainer/Label" to="." method="_on_label_mouse_exited"]

@@ -22,11 +22,10 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 uniform float transition_factor : hint_range(0.0, 1.0); // Transition factor for grayscale effect
-
 void fragment() {
     // Sample the screen texture
     vec4 color = texture(screen_texture, SCREEN_UV);
-
+	// If exclusion is active, render the original color
     // Convert to grayscale using luminance
     float grey = dot(color.rgb, vec3(0.299, 0.587, 0.114));
 

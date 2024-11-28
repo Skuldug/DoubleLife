@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dva75dwudlhxa"]
+
+[ext_resource type="Script" path="res://src/test.gd" id="1_t6r1e"]
+[ext_resource type="PackedScene" uid="uid://bo5gj6d3qv04s" path="res://assets/scenes/Shaders.tscn" id="2_3pa1t"]
+
+[node name="Test" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_t6r1e")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_3pa1t")]
