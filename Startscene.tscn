@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://bjognyv8q4gpf"]
+[gd_scene load_steps=14 format=4 uid="uid://bjognyv8q4gpf"]
 
 [ext_resource type="Texture2D" uid="uid://ox3u6ftt6vgy" path="res://Sprites/Tiles/RomanRoadTiles.png" id="1_kdtkd"]
+[ext_resource type="Texture2D" uid="uid://cjinbiss7ii3v" path="res://Sprites/Tiles/RomanHouseTile.png" id="2_unbm0"]
+[ext_resource type="Texture2D" uid="uid://cldstumject4" path="res://Sprites/death1.png" id="3_fxoln"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cha44"]
 texture = ExtResource("1_kdtkd")
@@ -19,6 +21,7 @@ texture_region_size = Vector2i(32, 32)
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dyhem"]
+texture = ExtResource("2_unbm0")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -42,12 +45,55 @@ sources/1 = SubResource("TileSetAtlasSource_dyhem")
 
 [sub_resource type="LabelSettings" id="LabelSettings_i55ib"]
 font_size = 32
-font_color = Color(0.992157, 0.819608, 0.47451, 1)
+font_color = Color(0.945098, 0.964706, 0.941176, 1)
 outline_size = 5
 outline_color = Color(0.239216, 0.2, 0.2, 1)
 shadow_size = 15
 shadow_color = Color(0, 0, 0, 0.211765)
 shadow_offset = Vector2(2, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihuyt"]
+atlas = ExtResource("3_fxoln")
+region = Rect2(36, 72, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id56o"]
+atlas = ExtResource("3_fxoln")
+region = Rect2(72, 72, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcin4"]
+atlas = ExtResource("3_fxoln")
+region = Rect2(144, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnujj"]
+atlas = ExtResource("3_fxoln")
+region = Rect2(0, 72, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovs5e"]
+atlas = ExtResource("3_fxoln")
+region = Rect2(108, 36, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2c366"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihuyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id56o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcin4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnujj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovs5e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Startscene" type="Node2D"]
 
@@ -71,3 +117,10 @@ you start searching in the ancient
 Rome, trying to find the colosseum"
 label_settings = SubResource("LabelSettings_i55ib")
 horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(494, 513)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_2c366")
+autoplay = "default"

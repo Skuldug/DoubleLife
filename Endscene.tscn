@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://dhy6nslaesc78"]
+[gd_scene load_steps=8 format=4 uid="uid://dhy6nslaesc78"]
 
 [ext_resource type="Texture2D" uid="uid://kb8y3ihcp0qt" path="res://Sprites/Tiles/Wasteland_1.png" id="1_4lwy5"]
 [ext_resource type="Script" path="res://endscene.gd" id="1_e1ok7"]
 [ext_resource type="Texture2D" uid="uid://ogddfv6mblv1" path="res://Sprites/WastelandBunker.png" id="2_4a04f"]
+[ext_resource type="AudioStream" uid="uid://citgch0re082u" path="res://Music/MainThemeMaster.mp3" id="4_q1c38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jiw6o"]
 texture = ExtResource("1_4lwy5")
@@ -52,3 +53,8 @@ Have fun all alone, as the only
 WITNESS OF TIME!"
 label_settings = SubResource("LabelSettings_urr76")
 horizontal_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(510, 163)
+stream = ExtResource("4_q1c38")
+autoplay = true

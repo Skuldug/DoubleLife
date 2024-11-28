@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://b3e8spaj4avfg"]
+[gd_scene load_steps=9 format=4 uid="uid://b3e8spaj4avfg"]
 
 [ext_resource type="Texture2D" uid="uid://ox3u6ftt6vgy" path="res://Sprites/Tiles/RomanRoadTiles.png" id="1_t6glq"]
 [ext_resource type="Texture2D" uid="uid://cjinbiss7ii3v" path="res://Sprites/Tiles/RomanHouseTile.png" id="2_duhwy"]
 [ext_resource type="Texture2D" uid="uid://cauqm6un28asc" path="res://Sprites/Colosseum.png" id="3_3k0ag"]
+[ext_resource type="AudioStream" uid="uid://dpdyodbqycgav" path="res://Music/Doublelife - Roma - Master.mp3" id="4_4bd51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iff6s"]
 texture = ExtResource("1_t6glq")
@@ -114,3 +115,8 @@ tile_set = SubResource("TileSet_n8a1o")
 texture_filter = 1
 position = Vector2(1264, -208)
 texture = ExtResource("3_3k0ag")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(637, 356)
+stream = ExtResource("4_4bd51")
+autoplay = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddr61jolgppiw"
+path="res://.godot/imported/Doublelife - Persia - Master.mp3-05f60dd4ccf1c029d2412ece2c41f182.mp3str"
+
+[deps]
+
+source_file="res://Music/Doublelife - Persia - Master.mp3"
+dest_files=["res://.godot/imported/Doublelife - Persia - Master.mp3-05f60dd4ccf1c029d2412ece2c41f182.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

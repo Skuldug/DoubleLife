@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://gquw65oph5he"]
+[gd_scene load_steps=9 format=4 uid="uid://gquw65oph5he"]
 
 [ext_resource type="Texture2D" uid="uid://l1j56xjbbeov" path="res://Sprites/Tiles/PersianRoadTiles.png" id="1_d1vou"]
 [ext_resource type="Texture2D" uid="uid://bdo3kq8vgn0oy" path="res://Sprites/Tiles/PersianHouseNew.png" id="2_3seem"]
 [ext_resource type="Texture2D" uid="uid://bdt7d5cfqnc2d" path="res://Sprites/PersiaMosqueWBackground.png" id="3_p0iqy"]
+[ext_resource type="AudioStream" uid="uid://ddr61jolgppiw" path="res://Music/Doublelife - Persia - Master.mp3" id="5_4ibvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rm03l"]
 texture = ExtResource("1_d1vou")
@@ -138,3 +139,8 @@ rendering_quadrant_size = 32
 texture_filter = 1
 position = Vector2(208, -176)
 texture = ExtResource("3_p0iqy")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(860, 658)
+stream = ExtResource("5_4ibvj")
+autoplay = true
