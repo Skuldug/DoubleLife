@@ -37,22 +37,24 @@ func on_player_hit(damage : int) -> void:
 func player_reset(ghost_death : bool) -> void:
 	anim_sprite.self_modulate = Color(1,1,1,1)
 	ghost = false
-	health_reset.emit()
 	if ghost_death:
 		player_canvas.layer = 4
 		anim_sprite.play("ghost_death")
 
 func player_death() -> void:
+	if ghost:
+		player_reset(true)
+		return
 	ghost = true
 	anim_sprite.play("death")
-	health_reset.emit()
 
 func respawn_player(new_spawn : Vector2 = current_spawn):
+	health_reset.emit()
 	if ghost:
 		anim_sprite.self_modulate = Color(1,1,1,0.6)
 	else:
 		anim_sprite.self_modulate = Color(1,1,1,1)
-	handle_animation(velocity)
+	anim_sprite.play("player_down_idle")
 	self.position = current_spawn
 	current_spawn = new_spawn
 
@@ -60,14 +62,11 @@ func player_ressurection(pos : Vector2) -> void:
 	anim_sprite.self_modulate = Color(1,1,1,1)
 	self.position = pos
 	current_spawn = pos
-	anim_sprite.play("ressurection")
 	get_parent().get_tree().paused = true
 	can_move = false
-	await anim_sprite.animation_finished
-	can_move = true
-	get_parent().get_tree().paused = false
 	ghost = false
-	health_reset.emit()
+	
+	anim_sprite.play("ressurection")
 # Handle animation based on movement and idle states
 func handle_animation(velocity: Vector2) -> void:
 	# If there is movement (non-zero velocity), update the animation

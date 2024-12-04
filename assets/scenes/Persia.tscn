@@ -158,13 +158,17 @@ process_mode = 0
 position = Vector2(1030, 257)
 
 [node name="StaticEnemy" parent="." instance=ExtResource("7_h8yew")]
+process_mode = 0
 position = Vector2(85, 878)
 
 [node name="StaticEnemy2" parent="." instance=ExtResource("7_h8yew")]
+process_mode = 0
 position = Vector2(1297, 996)
 
 [node name="StaticEnemy3" parent="." instance=ExtResource("7_h8yew")]
+process_mode = 0
 position = Vector2(604, 137)
 
 [node name="StaticEnemy4" parent="." instance=ExtResource("7_h8yew")]
+process_mode = 0
 position = Vector2(1501, 67)

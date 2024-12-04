@@ -38,8 +38,8 @@ func set_direction(direction):
 	self.direction = direction
 
 func _on_body_entered(body: Node) -> void:
-	
 	# Handle collision with a player
 	if body.is_in_group("Player"):
 		body.on_player_hit(damage)  # Call damage method on the player
-		queue_free()  # Destroy the projectile
+		print("collided with player")
+	queue_free()  # Destroy the projectile

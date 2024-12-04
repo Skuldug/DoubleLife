@@ -22,5 +22,4 @@ func unfade_from_black_ghost():
 	animation_player.unfade_from_black_ghost()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print(anim_name)
 	shader_effect_finished.emit(anim_name)

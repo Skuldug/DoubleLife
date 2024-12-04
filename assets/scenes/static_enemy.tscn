@@ -11,6 +11,7 @@ size = Vector2(43, 72)
 animations = []
 
 [node name="StaticEnemy" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_y7bsn")
 projectile = SubResource("PackedScene_m6bpa")
 

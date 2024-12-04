@@ -3,7 +3,7 @@ extends Node
 signal play_animation(animation : StringName)
 signal on_player_death()
 
-@export var MAX_HEALTH : int = 400
+@export var MAX_HEALTH : int = 600
 var med_threshold : int = MAX_HEALTH / 3 * 2
 var low_threshold : int = MAX_HEALTH / 3
 var health_in_frames : int = MAX_HEALTH

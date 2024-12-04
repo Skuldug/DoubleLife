@@ -66,15 +66,10 @@ func _death_finished():
 func _ghost_death_finished():
 	player.get_node("CanvasLayer").layer = 1
 	shader_controller.fade_to_black_ghost()
-	_load_level(false, true)
-	var level_children = current_level.get_children()
-	for child in level_children:
-		if child.is_in_group("corpse"):
-			self.remove_child(child)
-	get_tree().paused = false
 
 
 func _on_ghost_entered():
+	get_tree().paused = true
 	is_grey = false
 	var spawnpos = corpse.position
 	player.player_ressurection(spawnpos)
@@ -84,7 +79,9 @@ func _on_ghost_entered():
 
 
 func _ressurection_finished():
-	pass
+	get_tree().paused = false
+	player.can_move = true
+	player.health_reset.emit()
 
 
 func _player_reached_end():
@@ -113,11 +110,9 @@ func _load_level(first_load : bool, death : bool = false):
 	load_healthbar()
 	load_player()
 	if cutscene_counter:
-		print("unfading")
 		shader_controller.unfade_from_black()
-		await shader_controller.get_node("Control/AnimationPlayer").animation_finished
 		return
-	shader_controller.unfade_from_black() # TODO: change to use
+	shader_controller.unfade_from_black()
 	
 
 
@@ -153,6 +148,8 @@ func _load_cutscene():
 
 
 func load_healthbar():
+	if healthbar:
+		return
 	healthbar = load(healthbar_resource).instantiate()
 	add_child(healthbar)
 
@@ -181,7 +178,15 @@ func _on_shader_effect_finished(anim_name : StringName):
 	match anim_name:
 		"fade_to_black_ghost":
 			player.respawn_player()
-			shader_controller.unfade_from_black_ghost()
+			if is_grey:
+				shader_controller.unfade_from_black_ghost()
+				return
+			_load_level(false, true)
+			var level_children = current_level.get_children()
+			for child in level_children:
+				if child.is_in_group("corpse"):
+					self.remove_child(child)
+			shader_controller.unfade_from_black()
 		"unfade_from_black_ghost":
 			corpse.set_visible(true)
 			get_tree().paused = false
@@ -192,5 +197,8 @@ func _on_shader_effect_finished(anim_name : StringName):
 			player.player_reset(false)
 			level_counter += 1
 			_load_cutscene()
+		"unfade_from_black":
+			get_tree().paused = false
+
 func _on_any_key_in_cutscene():
 	shader_controller.fade_to_black()

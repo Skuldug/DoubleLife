@@ -98,15 +98,19 @@ unique_name_in_owner = true
 position = Vector2(2279, 191)
 
 [node name="StaticEnemy" parent="." instance=ExtResource("8_yuew7")]
+process_mode = 0
 position = Vector2(1516, 417)
 
 [node name="StaticEnemy2" parent="." instance=ExtResource("8_yuew7")]
+process_mode = 0
 position = Vector2(1574, 494)
 
 [node name="StaticEnemy3" parent="." instance=ExtResource("8_yuew7")]
+process_mode = 0
 position = Vector2(1120, 470)
 
 [node name="StaticEnemy4" parent="." instance=ExtResource("8_yuew7")]
+process_mode = 0
 position = Vector2(1109, 569)
 
 [node name="basic_monster" parent="." instance=ExtResource("6_bb4sd")]
@@ -125,6 +129,7 @@ position = Vector2(370, 900)
 position = Vector2(929, 931)
 
 [node name="StaticEnemy5" parent="." instance=ExtResource("8_yuew7")]
+process_mode = 0
 position = Vector2(1478, 948)
 
 [node name="basic_monster6" parent="." instance=ExtResource("6_bb4sd")]

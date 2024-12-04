@@ -12,7 +12,6 @@ func _on_animation_changed() -> void:
 func _on_animation_finished() -> void:
 	match anim_name:
 		&"death":
-			print("emitting death")
 			death_finished.emit()
 		&"ghost_death":
 			ghost_death_finished.emit()
